@@ -1,0 +1,125 @@
+@charset "utf-8";
+
+/* font-family settings */
+@font-face {
+    font-family: "NanumSquareB";
+    src: url("../fonts/NanumSquareB.eot");
+    src: local("NanumSquareB"), url("../fonts/NanumSquareB.woff") format("woff"), url("../fonts/NanumSquareB.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "NanumSquareR";
+    src: url("../fonts/NanumSquareR.eot");
+    src: local("NanumSquareR"), url("../fonts/NanumSquareR.woff") format("woff"), url("../fonts/NanumSquareR.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "NanumSquareRoundB";
+    src: url("../fonts/NanumSquareRoundB.eot");
+    src: local("NanumSquareRoundB"), url("../fonts/NanumSquareRoundB.woff") format("woff"), url("../fonts/NanumSquareRoundB.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "NanumSquareRoundR";
+    src: url("../fonts/NanumSquareRoundR.eot");
+    src: local("NanumSquareRoundR"), url("../fonts/NanumSquareRoundR.woff") format("woff"), url("../fonts/NanumSquareRoundR.ttf") format("truetype");
+}
+
+
+/* basic element form settings */
+
+  //폰트 패밀리 Mixin 설정
+
+    @mixin font_NanumR($font_size:20px) {
+        $font_name:"NanumSquareR";
+
+        font-family: $font_name;
+        font-size: $font_size;
+    }
+
+    @mixin font_NanumB($font_size:20px) {
+        $font_name:"NanumSquareB";
+
+        font-family: $font_name;
+        font-size: $font_size;
+    }
+
+    @mixin font_NanumRR($font_size:20px) {
+        $font_name:"NanumSquareRoundR";
+
+        font-family: $font_name;
+        font-size: $font_size;
+    }
+
+////
+
+button:hover {
+    opacity: 0.6;
+}
+
+/// 
+
+
+
+body {
+    margin: 0 10px 0;
+    background-image: url(/img/bg_img.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    h1 {
+        @include font_NanumB(3rem);
+    }
+}
+
+.container {
+    background-color: white;
+    min-height: 100vh;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.input-area {
+    margin: 15px auto 25px;
+}
+
+.task-area {
+    
+}
+
+.task-tabs {
+    display: flex;
+    position: relative;
+    text-align: center;
+
+    div {
+        padding: 1em;
+        min-width: 120px;
+        background-color: #e4e4e4;
+        border: 1px solid lightgray;
+        border-radius: 10px 10px 0 0;
+    }
+
+    div:hover {
+        opacity: 0.6;
+    }
+
+    .tabs-selected{
+        background-color: #ffffff;
+        border-bottom: solid 4px lightblue;
+    }
+    
+
+}
+
+.task-list {
+    border: 1px solid lightgray;
+    min-height: 80vh;
+    
+    .task-card{
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+        border:solid 1px green;
+    }
+
+}
