@@ -68,7 +68,7 @@ function toggleComplete(id){
     const i = taskList.findIndex(item => item.id == id);
     taskList[i].isComplete = !taskList[i].isComplete;
     // findIndex 를 이용하여 for문 없이 작동시키는 경우
-    // find 와 달리
+    // find 와 달리 배열에 직접 적용
 
     listRender();
 };
