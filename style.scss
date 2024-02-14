@@ -54,12 +54,15 @@
 ////
 
 button:hover {
-    opacity: 0.6;
+    opacity: 0.7;
+}
+
+li,ul  {
+    list-style: none;
+    display: inline-block;
 }
 
 /// 
-
-
 
 body {
     margin: 0 10px 0;
@@ -87,27 +90,34 @@ body {
 }
 
 .task-tabs {
-    display: flex;
-    position: relative;
-    text-align: center;
 
-    div {
-        padding: 1em;
-        min-width: 120px;
-        background-color: #e4e4e4;
-        border: 1px solid lightgray;
-        border-radius: 10px 10px 0 0;
-    }
+    ul {
 
-    div:hover {
-        opacity: 0.6;
-    }
+        margin: 0;
+        padding: 0;
+        display: flex;
+        text-align: center;
+        
 
-    .tabs-selected{
-        background-color: #ffffff;
-        border-bottom: solid 4px lightblue;
-    }
+        li {
+            padding: 1em;
+            min-width: 120px;
+            background-color: #e4e4e4;
+            border: 1px solid lightgray;
+            border-radius: 10px 10px 0 0;
+        }
     
+        li:hover {
+            opacity: 0.7;
+            cursor: pointer;
+        }
+    
+        .tabs-selected {
+            background-color: #ffffff;
+            border-bottom: solid 4px lightblue;
+        }
+    
+    }
 
 }
 
@@ -122,4 +132,17 @@ body {
         border:solid 1px green;
     }
 
+}
+
+.task-done {
+    text-decoration:line-through;
+    background-color: #e4e4e4;
+}
+
+.undoBtn {
+    background-color: red;
+}
+
+.checkBtn {
+    background-color: green;
 }
