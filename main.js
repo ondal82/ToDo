@@ -93,11 +93,13 @@ function setMode(event){
     mode = event.target.id;
 
     // 언더바 요소 이동 처리
-    let delClassItem = document.querySelector(".tabs-selected");
-    let addClassItem = document.getElementById(mode);
-    delClassItem.classList.remove("tabs-selected");
+    let delClassItem = document.querySelector(".tabs-selected"); //기존에 class 를 가진 요소 탐색
+    let addClassItem = document.getElementById(mode); // 새로 class를 넣을 요소 탐색
+    delClassItem.classList.remove("tabs-selected"); 
     addClassItem.classList.add("tabs-selected");
     listRender();
+
+    // id를 넣지 않고 처리가능한 방법은? nth-child 처럼
 };
 
 function filter(){
