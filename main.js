@@ -1,6 +1,10 @@
 // 전역 변수 설정
 
-let taskList = JSON.parse(localStorage.getItem('taskList'));;
+let taskList = [];
+
+taskList = JSON.parse(localStorage.getItem('taskList'));
+// 로컬 캐시에 저장한 taskList 가져오기
+
 let index = "";
 let mode = "all";
 let filterList = taskList;
@@ -142,8 +146,7 @@ function listRender(){
     document.getElementById("task-list").innerHTML = resultHTML;
     
     localStorage.setItem('taskList', JSON.stringify(taskList));
-    
-    // 할일 로컬 저장
+    // 변동이 있을때 마다 할일 로컬 캐시에 저장
 }
 
 function idGen() {
