@@ -5,6 +5,7 @@ let taskList = [];
 if (JSON.parse(localStorage.getItem('taskList'))){
     taskList = JSON.parse(localStorage.getItem('taskList'));
 } 
+// taskList 캐시가 있다면 가져와서 대체함. 처음이라면 그냥 taskList를 빈 배열로 설정
 
 let index = "";
 let mode = "all";
@@ -154,11 +155,6 @@ function idGen() {
     return "_" + Math.random().toString(36).substr(2, 16);
 };
 
-function initSetting(){
-
-};
-
-
 // code 실행
-listRender();
-// 입력 값없는 처음에도 리스트 표시하여 저장된 값 불러옴
+
+listRender(); // 입력 값없는 처음에도 기존 리스트 표시
