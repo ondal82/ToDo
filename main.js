@@ -1,10 +1,6 @@
 // 전역 변수 설정
 
 let taskList = [];
-
-taskList = JSON.parse(localStorage.getItem('taskList'));
-// 로컬 캐시에 저장한 taskList 가져오기
-
 let index = "";
 let mode = "all";
 let filterList = taskList;
@@ -153,7 +149,17 @@ function idGen() {
     return "_" + Math.random().toString(36).substr(2, 16);
 };
 
+function initSetting(){
+    if (JSON.parse(localStorage.getItem('taskList'))){
+        taskList=JSON.parse(localStorage.getItem('taskList'));
+    } else (
+        taskList=[];
+    )
+};
+
+
 // code 실행
 
+initSetting();
 listRender();
 // 입력 값없는 처음에도 리스트 표시하여 저장된 값 불러옴
