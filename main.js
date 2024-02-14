@@ -1,6 +1,11 @@
 // 전역 변수 설정
 
 let taskList = [];
+
+if (JSON.parse(localStorage.getItem('taskList'))){
+    taskList = JSON.parse(localStorage.getItem('taskList'));
+} 
+
 let index = "";
 let mode = "all";
 let filterList = taskList;
@@ -150,16 +155,10 @@ function idGen() {
 };
 
 function initSetting(){
-    if (JSON.parse(localStorage.getItem('taskList'))){
-        taskList=JSON.parse(localStorage.getItem('taskList'));
-    } else (
-        taskList=[];
-    )
+
 };
 
 
 // code 실행
-
-initSetting();
 listRender();
 // 입력 값없는 처음에도 리스트 표시하여 저장된 값 불러옴
