@@ -38,29 +38,25 @@ body {
   margin: 0px;
   background: url(/img/bg_img.jpg) repeat;
   background-size: cover;
-  min-width: 800px;
   background-color: white;
   color: black;
 }
 body .container {
-  background-image: url(/img/bg_paper_11.jpg);
-  background-repeat: repeat;
-  background-size: contain;
-  background-color: rgb(235, 235, 220);
-  width: 800px;
-  min-width: 750px;
+  background: url(/img/bg_paper_11.jpg) repeat;
+  background-size: round;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
   border-radius: 10px;
-  padding: 30px 0 10px 0px;
+  padding: 30px 10px 10px 10px;
   margin: 10px auto;
+  min-width: 800px;
 }
 body .container .logo {
   margin: 40px 70px 20px;
 }
 body .container .input-area {
-  margin: 10px 60px 20px;
+  margin: 10px 100px 20px;
   display: flex;
-  justify-content: end;
+  justify-content: center;
   align-items: center;
   height: 80px;
 }
@@ -140,16 +136,17 @@ body .container .task-tabs ul .tabs-selected {
 }
 body .container .task-list {
   min-height: 60vh;
-  margin: 35px 30px 50px 30px;
+  margin: 35px auto 45px;
 }
 body .container .task-list .task-card {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   min-height: 60px;
   padding: 10px 10px 10px 40px;
-  gap: 30px;
+  gap: 35px;
   vertical-align: middle;
+  margin-bottom: 15px;
 }
 body .container .task-list .task-card .checkBtn {
   background: none;

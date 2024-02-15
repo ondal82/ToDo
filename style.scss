@@ -84,32 +84,26 @@ body {
     margin: 0px;
     background: url(/img/bg_img.jpg) repeat;
     background-size: cover;
-    min-width: 800px;
     background-color: white;
     color: black;
     
-
-    
     .container {
-        background-image: url(/img/bg_paper_11.jpg);
-        background-repeat: repeat;
-        background-size: contain;
-        background-color: rgb(235, 235, 220);
-        width: 800px;
-        min-width: 750px;
+        background: url(/img/bg_paper_11.jpg) repeat;
+        background-size: round;
         box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
         border-radius: 10px;
-        padding: 30px 0 10px 0px;
+        padding: 30px 10px 10px 10px;
         margin: 10px auto;
+        min-width: 800px;
 
         .logo {
             margin: 40px 70px 20px;
         }
 
         .input-area {
-            margin: 10px 60px 20px;
+            margin: 10px 100px 20px;
             display: flex;
-            justify-content: end;
+            justify-content: center;
             align-items: center;
             height: 80px;
 
@@ -203,21 +197,20 @@ body {
         }
 
         .task-list {
-            // border: 1px solid lightgray;
             min-height: 60vh;
-            margin: 35px 30px 50px 30px;
+            margin: 35px auto 45px;
             
             .task-card{
                 display: flex;
-                justify-content: space-between;
+                justify-content: center;
                 align-items: center;
                 // border:solid 1px green;
                 min-height: 60px;
                 padding: 10px 10px 10px 40px;
-                gap: 30px;
+                gap: 35px;
                 vertical-align: middle;
+                margin-bottom: 15px;
 
-                
                 .checkBtn {
                     background: none;
                     position: relative;
@@ -241,7 +234,6 @@ body {
                     min-width: 540px;
                     height: 60px;
                     line-height: 60px;
-                    // border:solid 1px green;
                     padding: 0 20px 0;
                     border-radius: 10px;
                     position: relative;
