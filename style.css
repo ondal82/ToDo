@@ -40,6 +40,8 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   min-width: 800px;
+  background-color: white;
+  color: black;
 }
 body .container {
   background-image: url(/img/bg_paper_11.jpg);
