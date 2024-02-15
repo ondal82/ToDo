@@ -50,18 +50,20 @@ body .container {
   background-color: rgb(235, 235, 220);
   width: 800px;
   min-width: 750px;
+  min-height: 95vh;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
   border-radius: 10px;
-  padding: 30px 0 10px;
+  padding: 30px 0 10px 0px;
 }
 body .container .logo {
-  margin: 40px 60px 20px;
+  margin: 40px 70px 20px;
 }
 body .container .input-area {
-  margin: 10px 60px 0px;
+  margin: 10px 60px 20px;
   display: flex;
   justify-content: end;
-  height: 100px;
+  align-items: center;
+  height: 80px;
 }
 body .container .input-area input {
   font-family: "NanumDaSiSiJagHae";
@@ -94,18 +96,19 @@ body .container .input-area .btn-add {
   margin-top: 50px;
   position: relative;
   background: none;
-  width: 65px;
-  height: 65px;
+  width: 60px;
   border: none;
 }
 body .container .input-area .btn-add::before {
   content: "";
   position: absolute;
-  background: url(/img/img_btn_add.png) no-repeat 0 0;
+  background: url(/img/img_btn_add.png) no-repeat 50% 50%;
+  background-size: contain;
   width: 61px;
   height: 80px;
-  bottom: 50px;
-  left: 5px;
+  bottom: -8px;
+  left: 8px;
+  opacity: 0.9;
 }
 body .container .task-tabs {
   padding-top: 5px;
@@ -137,15 +140,14 @@ body .container .task-tabs ul .tabs-selected {
   border-bottom: solid 6px lightblue;
 }
 body .container .task-list {
-  min-height: 50vh;
-  margin: 50px 40px 60px;
+  margin: 35px 30px 50px 30px;
 }
 body .container .task-list .task-card {
   display: flex;
   justify-content: space-between;
   align-items: center;
   min-height: 60px;
-  padding: 10px;
+  padding: 10px 10px 10px 40px;
   gap: 30px;
   vertical-align: middle;
 }
@@ -164,10 +166,10 @@ body .container .task-list .task-card .checkBtn::before {
   height: 51px;
   top: 0;
   left: 0;
+  opacity: 0.9;
 }
 body .container .task-list .task-card .task-items {
-  width: 100%;
-  min-width: 550px;
+  min-width: 540px;
   height: 60px;
   line-height: 60px;
   padding: 0 20px 0;
@@ -184,10 +186,11 @@ body .container .task-list .task-card .task-items::before {
   content: "";
   background: url(/img/img_under_1.png) no-repeat;
   background-size: contain;
-  width: 550px;
+  width: 540px;
   height: 20px;
   bottom: -10px;
   left: 0px;
+  opacity: 0.9;
 }
 body .container .task-list .task-card .task-done {
   text-decoration: line-through;
@@ -207,6 +210,7 @@ body .container .task-list .task-card .undoBtn::before {
   height: 55px;
   top: 0;
   left: 0;
+  opacity: 0.9;
 }
 body .container .task-list .task-card .undoBtn::after {
   content: "";
@@ -232,8 +236,9 @@ body .container .task-list .task-card .delBtn::before {
   background-size: 70%;
   width: 50px;
   height: 50px;
-  top: 0;
-  left: 0;
+  top: 5px;
+  left: -10px;
+  opacity: 0.8;
 }
 
 .box0::before {
