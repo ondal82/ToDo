@@ -49,6 +49,7 @@ body .container {
   padding: 30px 10px 10px 10px;
   margin: 10px auto;
   min-width: 800px;
+  min-height: 85vh;
 }
 body .container .logo {
   margin: 40px 70px 20px;
