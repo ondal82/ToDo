@@ -26,32 +26,48 @@
 }
 
 
+@font-face {
+    font-family: "NanumDaSiSiJagHae";
+    src: url("../fonts/NanumDaSiSiJagHae.eot");
+    src: local("NanumDaSiSiJagHae"), url("../fonts/NanumDaSiSiJagHae.woff") format("woff"), url("../fonts/NanumDaSiSiJagHae.ttf") format("truetype");
+}
+
 /* basic element form settings */
 
   //폰트 패밀리 Mixin 설정
 
     @mixin font_NanumR($font_size:20px) {
         $font_name:"NanumSquareR";
-
         font-family: $font_name;
         font-size: $font_size;
     }
 
     @mixin font_NanumB($font_size:20px) {
         $font_name:"NanumSquareB";
-
         font-family: $font_name;
         font-size: $font_size;
     }
 
     @mixin font_NanumRR($font_size:20px) {
         $font_name:"NanumSquareRoundR";
-
         font-family: $font_name;
         font-size: $font_size;
     }
 
-////
+    @mixin font_NanumRB($font_size:20px) {
+        $font_name:"NanumSquareRoundB";
+        font-family: $font_name;
+        font-size: $font_size;
+    }
+
+    
+    @mixin font_NanumS($font_size:20px) {
+        $font_name:"NanumDaSiSiJagHae";
+        font-family: $font_name;
+        font-size: $font_size;
+    }
+
+//// global setting
 
 button:hover {
     opacity: 0.7;
@@ -65,84 +81,297 @@ li,ul  {
 /// 
 
 body {
-    margin: 0 10px 0;
+    margin: 10px;
     background-image: url(/img/bg_img.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    min-width: 800px;
 
-    h1 {
-        @include font_NanumB(3rem);
-    }
-}
-
-.container {
-    background-color: white;
-    min-height: 100vh;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-}
-
-.input-area {
-    margin: 15px auto 25px;
-}
-
-.task-area {
     
-}
+    .container {
+        background-image: url(/img/bg_paper_11.jpg);
+        background-repeat: repeat;
+        background-size: contain;
+        background-color: rgb(235, 235, 220);
+        width: 800px;
+        min-width: 750px;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        border-radius: 10px;
+        padding: 30px 0 10px;
 
-.task-tabs {
+        .logo {
+            margin: 40px 60px 20px;
+        }
 
-    ul {
+        .input-area {
+            margin: 10px 60px 0px;
+            display: flex;
+            justify-content: end;
+            height: 100px;
 
-        margin: 0;
-        padding: 0;
-        display: flex;
-        text-align: center;
+            input{
+                @include font_NanumS(30px);
+                font-weight: 800;
+                height: 65px;
+                line-height: 55px;
+                letter-spacing: 2px;
+                min-width: 50%;
+                position: relative;
+                border: solid 3px #929292;
+                border-radius: 20px;
+                // border-width: 0 0 3px;
+                // outline: none;
+                padding-left: 20px;
+
+                &::placeholder {
+                    color: rgb(156, 156, 156);
+                    @include font_NanumS(30px);
+                    font-weight: 800;
+                    letter-spacing: 2px;
+                    
+                }
+            }
+
+            .btn-add {
+                margin-top: 50px;
+                position: relative;
+                background: none;
+                width: 65px;
+                height: 65px;
+                border: none;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    background: url(/img/img_btn_add.png) no-repeat 0 0;
+                    width: 61px;
+                    height: 80px;
+                    bottom:50px;
+                    left:5px;
+                }
+            }
+
+        }
+
+        .task-tabs {
+            padding-top: 5px;
+            // border-bottom: solid 2px #c5c5c5;
+
+            ul {
+                margin: 0;
+                padding: 0;
+                display: flex;
+                text-align: center;
+                justify-content: center;
+                gap: 40px;
+                
         
+                li {
+                    @include font_NanumS(25px);
+                    font-weight: 800;
+                    letter-spacing: 2px;
+                    padding: 5px 10px;
+                    width: 9%;
+                    min-width: 100px;
+                    // background-color: #b4b4b4;
+                    // border: 2px solid lightgray;
+                    border-radius: 10px 10px 0 0;
+                }
+            
+                li:hover {
+                    opacity: 0.7;
+                    cursor: pointer;
+                }
+            
+                .tabs-selected {
+                    background-color: #ffffff;
+                    border-bottom: solid 6px lightblue;
+                }
+            
+            }
+        
+        }
 
-        li {
-            padding: 1em;
-            min-width: 120px;
-            background-color: #e4e4e4;
-            border: 1px solid lightgray;
-            border-radius: 10px 10px 0 0;
+
+        .task-area {
+            
         }
-    
-        li:hover {
-            opacity: 0.7;
-            cursor: pointer;
+
+        .task-list {
+            // border: 1px solid lightgray;
+            min-height: 50vh;
+            margin: 50px 40px 60px;
+            
+            .task-card{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                // border:solid 1px green;
+                min-height: 60px;
+                padding: 10px;
+                gap: 30px;
+                vertical-align: middle;
+
+                
+                .checkBtn {
+                    background: none;
+                    position: relative;
+                    width: 50px;
+                    height: 50px;
+                    border: none;
+                    
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        background: url(/img/img_checkbox_1.png) no-repeat;
+                        width: 46px;
+                        height: 51px;
+                        top:0;
+                        left:0;
+                    }
+                }
+
+                .task-items {
+                    width:100%;
+                    min-width: 550px;
+                    height: 60px;
+                    line-height: 60px;
+                    // border:solid 1px green;
+                    padding: 0 20px 0;
+                    border-radius: 10px;
+                    position: relative;
+                    @include font_NanumS(30px);
+                    font-weight: 800;
+                    letter-spacing: 2px;
+                    color: #5e5e5e;
+                    
+                    &::before {
+                        position: absolute;
+                        content: "";
+                        background: url(/img/img_under_1.png) no-repeat;
+                        background-size: contain;
+                        width: 550px;
+                        height: 20px;
+                        bottom:-10px;
+                        left: 0px;
+                    }
+                }
+
+                .task-done {
+                    text-decoration:line-through;
+                    // background-color: #e4e4e4;
+                }
+
+                
+                .undoBtn {
+                    background: none;
+                    position: relative;
+                    width: 50px;
+                    height: 50px;
+                    border: none;
+                    
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        background: url(/img/img_checkbox_1.png) no-repeat;
+                        width: 55px;
+                        height: 55px;
+                        top:0;
+                        left:0;
+                    }
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        background: url(/img/img_check.png) no-repeat;
+                        background-size: 80%;
+                        width: 55px;
+                        height: 55px;
+                        top: -5px;
+                        left: 8px;
+                    }
+                }
+
+                .delBtn {
+                    background: none;
+                    position: relative;
+                    width: 50px;
+                    height: 50px;
+                    border: none;
+                    
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        background: url(/img/img_btn_del.png) no-repeat;
+                        background-size: 70%;
+                        width: 50px;
+                        height: 50px;
+                        top:0;
+                        left:0;
+                    }
+                }
+
+            }
         }
-    
-        .tabs-selected {
-            background-color: #ffffff;
-            border-bottom: solid 4px lightblue;
-        }
-    
     }
-
 }
 
-.task-list {
-    border: 1px solid lightgray;
-    min-height: 80vh;
-    
-    .task-card{
-        display: flex;
-        justify-content: space-between;
-        padding: 20px;
-        border:solid 1px green;
+.box0{
+    &::before {
+        background: url(/img/img_checkbox_1.png) no-repeat !important;
     }
-
 }
 
-.task-done {
-    text-decoration:line-through;
-    background-color: #e4e4e4;
+.box1{
+    &::before {
+        background: url(/img/img_checkbox_5.png) no-repeat !important;
+    }
 }
 
-.undoBtn {
-    background-color: red;
+.box2{
+    &::before {
+        background: url(/img/img_checkbox_2.png) no-repeat !important;
+    }
 }
 
-.checkBtn {
-    background-color: green;
+.box3{
+    &::before {
+        background: url(/img/img_checkbox_4.png) no-repeat !important;
+    }
+}
+
+.box4{
+    &::before {
+        background: url(/img/img_checkbox_3.png) no-repeat !important;
+    }
+}
+
+.under1 {
+    &::before {
+        background: url(/img/img_under_1.png) no-repeat !important;
+    }
+}
+
+.under2 {
+    &::before {
+        background: url(/img/img_under_2.png) no-repeat !important;
+    }
+}
+
+.under3 {
+    &::before {
+        background: url(/img/img_under_3.png) no-repeat !important;
+    }
+}
+
+.under4 {
+    &::before {
+        background: url(/img/img_under_4.png) no-repeat !important;
+    }
+}
+
+.under5 {
+    &::before {
+        background: url(/img/img_under_5.png) no-repeat !important;
+    }
 }

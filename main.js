@@ -121,28 +121,33 @@ function filter(){
 function listRender(){
     filter();
 
+    let styleNum = -1;
     let resultHTML ="";
     let toggleClass ="";
-    let toggleBtn = `class = "checkBtn"`;
+    let toggleBtn = `class = "checkBtn box${styleNum}"`;
     let list = filterList;
     
     for(let i=0 ; i<list.length ; i++){
+        styleNum = i%5;
+
         if(list[i].isComplete) {
-            toggleClass ="task-done";
-            toggleBtn = `class = "undoBtn"`;
-        }
+            toggleClass =`task-done under${styleNum}`;
+            toggleBtn = `class = "undoBtn box${styleNum}"`;
+        } else {
+            toggleClass=`under${styleNum}`;
+            toggleBtn = `class = "checkBtn box${styleNum}"`;
+        };
 
         resultHTML += 
         `<div class="task-card">
+            <button onclick="toggleComplete('${list[i].id}')" ${toggleBtn}></button>
             <div class="task-items ${toggleClass}">${list[i].taskContent}</div>
             <div class="task-btn-box">
-                <button onclick="toggleComplete('${list[i].id}')" ${toggleBtn}>Check</button>
-                <button onclick="deleteTask('${list[i].id}')">Delete</button>
+                <button onclick="deleteTask('${list[i].id}')" class="delBtn"></button>
             </div>
         </div>`;
 
-        toggleClass="";
-        toggleBtn = `class = "checkBtn"`;
+        
     }
 
     document.getElementById("task-list").innerHTML = resultHTML;
