@@ -81,13 +81,13 @@ li,ul  {
 /// 
 
 body {
-    margin: 10px;
-    background-image: url(/img/bg_img.jpg);
-    background-repeat: no-repeat;
+    margin: 0px;
+    background: url(/img/bg_img.jpg) repeat;
     background-size: cover;
     min-width: 800px;
     background-color: white;
     color: black;
+    
 
     
     .container {
@@ -97,10 +97,10 @@ body {
         background-color: rgb(235, 235, 220);
         width: 800px;
         min-width: 750px;
-        min-height: 95vh;
         box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
         border-radius: 10px;
         padding: 30px 0 10px 0px;
+        margin: 10px auto;
 
         .logo {
             margin: 40px 70px 20px;
@@ -204,7 +204,7 @@ body {
 
         .task-list {
             // border: 1px solid lightgray;
-            // min-height: 50vh;
+            min-height: 60vh;
             margin: 35px 30px 50px 30px;
             
             .task-card{
